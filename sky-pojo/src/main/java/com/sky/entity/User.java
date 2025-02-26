@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -17,26 +16,24 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private Long userId;
 
-    //微信用户唯一标识
-    private String openid;
+    private String username;
 
-    //姓名
-    private String name;
+    private String password;
 
-    //手机号
-    private String phone;
+    private String email;
 
-    //性别 0 女 1 男
-    private String sex;
+    private String phoneNumber;
 
-    //身份证号
     private String idNumber;
 
-    //头像
-    private String avatar;
+    private String role; // 'admin' or 'user'
 
-    //注册时间
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
+
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateTime;
+
 }
